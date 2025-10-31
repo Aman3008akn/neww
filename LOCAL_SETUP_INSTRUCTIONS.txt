@@ -1,0 +1,35 @@
+LOCAL DEVELOPMENT SETUP INSTRUCTIONS
+====================================
+
+Your frontend is currently running and connected to a remote backend.
+You can access your application at: http://localhost:3000
+
+To set up the complete local development environment with a local backend, follow these steps:
+
+1. Install Python 3.8 or higher:
+   - Download from: https://www.python.org/downloads/
+   - During installation, check "Add Python to PATH"
+
+2. Install MongoDB:
+   - Download from: https://www.mongodb.com/try/download/community
+   - Follow the installation instructions for Windows
+
+3. Install backend dependencies:
+   - Open a terminal in the backend directory
+   - Run: pip install -r requirements.txt
+
+4. Install uvicorn (if not already installed):
+   - Run: pip install uvicorn
+
+5. Start the backend server:
+   - Run: uvicorn server:app --reload --host 0.0.0.0 --port 8000
+
+6. Update the frontend to use the local backend:
+   - Edit frontend/.env
+   - Change REACT_APP_BACKEND_URL to http://localhost:8000
+
+7. Restart the frontend server:
+   - Stop the current frontend server (Ctrl+C)
+   - Run: npx yarn start
+
+This will give you a fully local development environment.
